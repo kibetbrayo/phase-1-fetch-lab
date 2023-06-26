@@ -1,6 +1,10 @@
+const { returns } = require("chai-spies");
+
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+fetch("https://anapioficeandfire.com/api/books")
+  .then((response) => response.json())
+  .then((data) => renderBooks(json));
 }
 
 function renderBooks(books) {
@@ -15,3 +19,4 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks();
 });
+console.log(fetchBooks);
